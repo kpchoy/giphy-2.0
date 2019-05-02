@@ -2,10 +2,10 @@ import {
   apiFetchGifs
 } from '../utils/api_util';
 
-export const RECEIVE_ALL_GIPHS = "RECEIVE_ALL_GIPHS";
+export const RECEIVE_ALL_GIFS = "RECEIVE_ALL_GIFS";
 
 const receiveAllGifs = (gifs) => ({
-  type: RECEIVE_ALL_GIPHS,
+  type: RECEIVE_ALL_GIFS,
   gifs,
 })
 

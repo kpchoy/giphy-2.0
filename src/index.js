@@ -1,16 +1,33 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App.jsx';
+import App from './App';
 import * as serviceWorker from './serviceWorker';
+import configStore from './store/store';
+
 import {
-  apiFetchGifs
-} from './utils/api_util';
+  HashRouter
+} from 'react-router-dom';
+import {
+  Provider
+} from 'react-redux';
+
+const Root = () => {
+  const store = configStore();
+
+  return (
+    <Provider store={store} >
+      <HashRouter >
+        <App />
+      </HashRouter>
+    </Provider >
+  )
+}
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
-  // window.apiFetchGifs = apiFetchGifs("happy");
-  ReactDOM.render( < App / > , root)
+
+  ReactDOM.render(< Root />, root)
 })
 
 
