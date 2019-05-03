@@ -24,16 +24,19 @@ class IndexGifs extends React.Component {
   }
 
   render() {
-    let gifs
+    let gifs = this.props.gifs
     if (!gifs) {
-      gifs = () => (<li>gifs are loading at this time</li>)
+      gifs = <li>hello world</li>
     } else {
-      gifs = this.props.gifs.map(gif => (
-        <li>
-          {gif.slug}
-        </li>
-      )
-      )
+      gifs = Object.values(this.props.gifs).map(gif => {
+
+        return (
+
+          <li>
+            {gif.id}
+          </li>
+        )
+      })
     }
 
     return (
