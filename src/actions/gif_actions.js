@@ -10,10 +10,16 @@ const receiveAllGifs = (gifs) => ({
 })
 
 
-export const fetchGifs = (query) => {
-  return apiFetchGifs(query).then(response => dispatch => {
+export const fetchGifs = (query) => dispatch => {
+
+
+  return apiFetchGifs(query).then(response => {
     const dataObj = {};
     response.data.data.forEach(gif => dataObj[gif.id] = gif);
+
+    debugger
+
+
     return dispatch(receiveAllGifs(dataObj));
   })
 }
