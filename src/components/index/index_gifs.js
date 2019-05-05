@@ -1,4 +1,5 @@
 import React from 'react';
+import GifItem from './gif_item';
 
 class IndexGifs extends React.Component {
   constructor(props) {
@@ -29,12 +30,8 @@ class IndexGifs extends React.Component {
       gifs = <li>hello world</li>
     } else {
       gifs = Object.values(this.props.gifs).map(gif => {
-
         return (
-
-          <li>
-            {gif.id}
-          </li>
+          <GifItem key={gif.id} gif={gif} />
         )
       })
     }
